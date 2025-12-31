@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class UserCell: UITableViewCell {
+final class UserTableViewCell: UITableViewCell {
 
-    static let identifier = "UserCell"
+    static let identifier = "UserTableViewCell"
 
     private let nameLabel = UILabel()
     private let emailLabel = UILabel()

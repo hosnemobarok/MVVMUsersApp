@@ -24,7 +24,7 @@ final class UserListViewController: UIViewController {
 
     private func setupTable() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.identifier)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
@@ -57,7 +57,7 @@ extension UserListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier, for: indexPath) as! UserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as! UserTableViewCell
         cell.configure(with: viewModel.user(at: indexPath.row))
         return cell
     }
