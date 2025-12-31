@@ -6,6 +6,7 @@
 //
 
 
+import Foundation
 @testable import MVVMUsersApp
 
 final class MockAPIClient: APIClientProtocol {
@@ -15,9 +16,13 @@ final class MockAPIClient: APIClientProtocol {
 
     func request<T>(urlString: String, completion: @escaping (Result<T, APIError>) -> Void) where T : Decodable {
         if shouldFail {
-            completion(.failure(.noData))
+            completion(.failure(.networkError(NSError(domain: "", code: -1, userInfo: nil))))
         } else {
-            completion(.success(mockUsers as! T))
+            if let users = mockUsers as? T {
+                completion(.success(users))
+            } else {
+                completion(.failure(.decodingError))
+            }
         }
     }
 }
