@@ -33,7 +33,7 @@
 		7F645DF42F052EFE008C574A /* Exceptions for "MVVMUsersApp" folder in "MVVMUsersApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				SupportingFiles/Info.plist,
 			);
 			target = 7F645DC82F052EFC008C574A /* MVVMUsersApp */;
 		};
